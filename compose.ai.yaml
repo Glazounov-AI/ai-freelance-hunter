@@ -1,0 +1,4 @@
+services:
+  api:
+    volumes:
+      - ./config/freelancer-profile.json:/code/config/freelancer-profile.json:ro
