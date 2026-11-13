@@ -1,0 +1,16 @@
+# Secrets and local state
+.env
+.env.*
+!.env.example
+*.sqlite3
+*.db
+.venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+.idea/
+.vscode/
+*.py[cod]
