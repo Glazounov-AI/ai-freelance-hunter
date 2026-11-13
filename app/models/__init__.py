@@ -1,5 +1,8 @@
+from app.models.analysis import OpportunityAnalysis
+from app.models.application import Application, ApplicationEvent, ApplicationStatus
 from app.models.opportunity import Opportunity, OpportunityStatus, Source
 
-__all__ = ["Opportunity", "OpportunityStatus", "Source"]
-
-from app.models.analysis import OpportunityAnalysis  # noqa: F401
+__all__ = [
+    "Application", "ApplicationEvent", "ApplicationStatus", "Opportunity",
+    "OpportunityAnalysis", "OpportunityStatus", "Source",
+]
