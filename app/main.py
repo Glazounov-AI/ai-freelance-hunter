@@ -4,11 +4,13 @@ from fastapi import Depends, FastAPI
 from sqlalchemy import text
 from sqlalchemy.ext.asyncio import AsyncSession
 
+from app.api.opportunities import router as opportunities_router
 from app.core.security import require_admin
 from app.db.session import get_db
 
 logger = logging.getLogger(__name__)
-app = FastAPI(title="AI Freelance Hunter", version="0.1.0", docs_url=None, redoc_url=None)
+app = FastAPI(title="AI Freelance Hunter", version="0.2.0", docs_url=None, redoc_url=None)
+app.include_router(opportunities_router)
 
 
 @app.get("/health/live")
@@ -24,4 +26,4 @@ async def ready(db: AsyncSession = Depends(get_db)) -> dict[str, str]:
 
 @app.get("/api/v1/status", dependencies=[Depends(require_admin)])
 async def status() -> dict[str, str]:
-    return {"service": "ai-freelance-hunter", "phase": "foundation"}
+    return {"service": "ai-freelance-hunter", "phase": "collection"}
