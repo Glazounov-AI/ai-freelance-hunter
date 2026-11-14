@@ -17,3 +17,6 @@ htmlcov/
 
 # Local verified freelancer profile
 config/freelancer-profile.json
+
+# Generated Python package metadata
+*.egg-info/
